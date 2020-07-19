@@ -30,21 +30,15 @@ cd $build_dir
 opt=$build_dir/opt
 mkdir -p $opt
 cd $opt
-urls='https://github.com/zsh-users/zsh-autosuggestions.git https://github.com/zsh-users/zsh-syntax-highlighting https://github.com/molovo/crash'
+urls='https://github.com/zsh-users/zsh-autosuggestions.git https://github.com/zsh-users/zsh-syntax-highlighting'
 
 for url in $urls; do
 	git clone $arg_q --depth=1 $url
 done
 curl -L git.io/antigen > $opt/antigen.zsh
-curl -L "https://gist.github.com/pwnpanda/6acc65b062975f8dc3a95aa27318f817/raw/330a86a126c0dd378281dd10351bb29c714398c1/.zshrc_remote" > $build_dir/.zshrc_remote
+curl -L "https://gist.github.com/pwnpanda/6acc65b062975f8dc3a95aa27318f817/raw/1fd05e0f5b0408bc28fe0ae5af47b69998c1edc4/.zshrc_remote" > $build_dir/.zshrc_remote
 curl -L "https://gist.githubusercontent.com/pwnpanda/b68e4a86aba8185d0ad8aca00b3bf8d4/raw/9558dae85b3c32b1b3099da6b3603c2156cca35c/.p10k.zsh" > $build_dir/.p10k.zsh
 
-# Install fonts
-#mkdir -p /usr/share/fonts/truetype/FiraCode
-#cp Fira*.ttf /usr/share/fonts/truetype/FiraCode
-#mkdir -p /usr/share/fonts/truetype/MesloLGS
-#cp Meslo*.ttf /usr/share/fonts/truetype/MesloLGS
-#fc-cache -f -v
 
 #portable_url='https://,,,/.tar.gz'
 #tarname=`basename $portable_url`
