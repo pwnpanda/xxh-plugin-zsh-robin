@@ -37,8 +37,8 @@ for url in $urls; do
 done
 fpath=$fpath:$build_dir/opt/crash/
 curl -L git.io/antigen > $opt/antigen.zsh
-curl -L https://gist.githubusercontent.com/pwnpanda/6acc65b062975f8dc3a95aa27318f817/raw/36cbc9a7e089ff3da38f032a241f7cafffb19e0c/.zshrc_remote > $opt/.zshrc_remote
-curl -L https://gist.githubusercontent.com/pwnpanda/b68e4a86aba8185d0ad8aca00b3bf8d4/raw/9558dae85b3c32b1b3099da6b3603c2156cca35c/.p10k.zsh > $opt/.p10k.zsh
+curl -L "https://gist.githubusercontent.com/pwnpanda/6acc65b062975f8dc3a95aa27318f817/raw/36cbc9a7e089ff3da38f032a241f7cafffb19e0c/.zshrc_remote" > $opt/.zshrc_remote
+curl -L "https://gist.githubusercontent.com/pwnpanda/b68e4a86aba8185d0ad8aca00b3bf8d4/raw/9558dae85b3c32b1b3099da6b3603c2156cca35c/.p10k.zsh" > $opt/.p10k.zsh
 
 #portable_url='https://,,,/.tar.gz'
 #tarname=`basename $portable_url`
