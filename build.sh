@@ -36,7 +36,7 @@ for url in $urls; do
 	git clone $arg_q --depth=1 $url
 done
 curl -L git.io/antigen > $opt/antigen.zsh
-curl -L "https://gist.githubusercontent.com/pwnpanda/6acc65b062975f8dc3a95aa27318f817/raw/399b14ec50ccc48776dbf79936413d8615853e12/.zshrc_remote" > $build_dir/.zshrc_remote
+curl -L "https://gist.githubusercontent.com/pwnpanda/6acc65b062975f8dc3a95aa27318f817/raw/4b2d6deadadf1b88b79b9c7c8ae72144d3d0bfba/.zshrc_remote" > $build_dir/.zshrc_remote
 curl -L "https://gist.githubusercontent.com/pwnpanda/b68e4a86aba8185d0ad8aca00b3bf8d4/raw/9558dae85b3c32b1b3099da6b3603c2156cca35c/.p10k.zsh" > $build_dir/.p10k.zsh
 
 # Install fonts
