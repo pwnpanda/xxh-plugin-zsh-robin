@@ -1,0 +1,2 @@
+fpath=$fpath:$HOME/.xxh/plugins/xxh-plugin-zsh-robin/build/opt/crash/
+build_dir=$HOME/.xxh/plugins/xxh-plugin-zsh-robin/build/

@@ -35,10 +35,16 @@ urls='https://github.com/zsh-users/zsh-autosuggestions.git https://github.com/zs
 for url in $urls; do
 	git clone $arg_q --depth=1 $url
 done
-fpath=$fpath:$build_dir/opt/crash/
 curl -L git.io/antigen > $opt/antigen.zsh
 curl -L "https://gist.githubusercontent.com/pwnpanda/6acc65b062975f8dc3a95aa27318f817/raw/36cbc9a7e089ff3da38f032a241f7cafffb19e0c/.zshrc_remote" > $build_dir/.zshrc_remote
 curl -L "https://gist.githubusercontent.com/pwnpanda/b68e4a86aba8185d0ad8aca00b3bf8d4/raw/9558dae85b3c32b1b3099da6b3603c2156cca35c/.p10k.zsh" > $build_dir/.p10k.zsh
+
+# Install fonts
+#mkdir -p /usr/share/fonts/truetype/FiraCode
+#cp Fira*.ttf /usr/share/fonts/truetype/FiraCode
+#mkdir -p /usr/share/fonts/truetype/MesloLGS
+#cp Meslo*.ttf /usr/share/fonts/truetype/MesloLGS
+#fc-cache -f -v
 
 #portable_url='https://,,,/.tar.gz'
 #tarname=`basename $portable_url`
