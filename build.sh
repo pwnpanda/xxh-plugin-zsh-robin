@@ -40,7 +40,7 @@ mkdir -p $opt
 urls='https://github.com/zsh-users/zsh-autosuggestions.git https://github.com/zsh-users/zsh-syntax-highlighting https://github.com/molovo/crash'
 
 for url in $urls; do
-	git clone $arg_q --depth=1 $url $opt
+	git clone $arg_q --depth=1 $url $opt/
 done
 fpath=$fpath:$build_dir/opt/crash/
 curl -L git.io/antigen > $opt/antigen.zsh
