@@ -21,26 +21,19 @@ do
     cp $CDIR/$f $build_dir/
 done
 
-url='https://github.com/romkatv/powerlevel10k.git'
-home_dir=$build_dir/powerlevel10k
 cd $build_dir
 
 [ $QUIET ] && arg_q='-q' || arg_q=''
 [ $QUIET ] && arg_s='-s' || arg_s=''
 [ $QUIET ] && arg_progress='' || arg_progress='--show-progress'
 
-if [ -x "$(command -v git)" ]; then
-  git clone $arg_q --depth=1 $url $home_dir
-else
-  echo You should install git: https://duckduckgo.com/?q=install+git+on+linux
-fi
-
 opt=$build_dir/opt
 mkdir -p $opt
+cd $opt
 urls='https://github.com/zsh-users/zsh-autosuggestions.git https://github.com/zsh-users/zsh-syntax-highlighting https://github.com/molovo/crash'
 
 for url in $urls; do
-	git clone $arg_q --depth=1 $url $opt/
+	git clone $arg_q --depth=1 $url
 done
 fpath=$fpath:$build_dir/opt/crash/
 curl -L git.io/antigen > $opt/antigen.zsh
