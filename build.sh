@@ -37,7 +37,7 @@ for url in $urls; do
 done
 curl -L git.io/antigen > $opt/antigen.zsh
 curl -L "https://gist.githubusercontent.com/pwnpanda/6acc65b062975f8dc3a95aa27318f817/raw/3d90472aa7567e08e187ce5b4fb54a3b150bf153/.zshrc_remote" > $build_dir/.zshrc_remote
-curl -L "https://gist.githubusercontent.com/pwnpanda/b68e4a86aba8185d0ad8aca00b3bf8d4/raw/6cac973a3cefe25263c49d660c95e694a700f299/.p10k.zsh" > $build_dir/.p10k.zsh
+curl -L "https://gist.githubusercontent.com/pwnpanda/b68e4a86aba8185d0ad8aca00b3bf8d4/raw/7eceb1daa70912cea3d2bf41c5563dd80e52de04/.p10k.zsh" > $build_dir/.p10k.zsh
 
 
 #portable_url='https://,,,/.tar.gz'
