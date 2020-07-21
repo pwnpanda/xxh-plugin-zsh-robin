@@ -36,8 +36,8 @@ for url in $urls; do
 	git clone $arg_q --depth=1 $url
 done
 curl -L git.io/antigen > $opt/antigen.zsh
-curl -L "https://gist.github.com/pwnpanda/6acc65b062975f8dc3a95aa27318f817/raw/1fd05e0f5b0408bc28fe0ae5af47b69998c1edc4/.zshrc_remote" > $build_dir/.zshrc_remote
-curl -L "https://gist.githubusercontent.com/pwnpanda/b68e4a86aba8185d0ad8aca00b3bf8d4/raw/9558dae85b3c32b1b3099da6b3603c2156cca35c/.p10k.zsh" > $build_dir/.p10k.zsh
+curl -L "https://gist.githubusercontent.com/pwnpanda/6acc65b062975f8dc3a95aa27318f817/raw/15a7c532677cbf1658b5c82b54ef283978c2f4f4/.zshrc_remote" > $build_dir/.zshrc_remote
+curl -L "https://gist.githubusercontent.com/pwnpanda/b68e4a86aba8185d0ad8aca00b3bf8d4/raw/146779a0d9381ca001a21301e6cb5747dcd0f6d1/.p10k.zsh" > $build_dir/.p10k.zsh
 
 
 #portable_url='https://,,,/.tar.gz'
