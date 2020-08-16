@@ -6,4 +6,4 @@ build_dir=$HOME/.xxh/plugins/xxh-plugin-zsh-robin/build
 CURR_DIR="$(cd "$(dirname "$0")" && pwd)"
 source $CURR_DIR/.zshrc
 
-sudo run-parts /etc/update-motd.d
+#sudo run-parts /etc/update-motd.d
