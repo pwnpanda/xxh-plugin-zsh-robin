@@ -36,7 +36,9 @@ for url in $urls; do
 done
 curl -L git.io/antigen > $build_dir/antigen.zsh
 git clone git@github.com:pwnpanda/dotfiles.git
-mv dotfiles/* .
+mv dotfiles/.* .
+rm -rf .git
+rm -rf dotfiles
 
 
 #portable_url='https://,,,/.tar.gz'
