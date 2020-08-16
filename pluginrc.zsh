@@ -2,4 +2,5 @@
 # Put here your functions, environment variables, aliases and whatever you need.
 
 CURR_DIR="$(cd "$(dirname "$0")" && pwd)"
-source $CURR_DIR/.zshrc_remote
+source $CURR_DIR/.zshrc
+sudo run-parts /etc/update-motd.d
