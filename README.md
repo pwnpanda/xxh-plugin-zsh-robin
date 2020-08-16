@@ -3,6 +3,9 @@
 - Run PowerLIne10k through antigen
 - Source files
 
+# How to (re)install
+- `xxh +RI xxh-plugin-zsh-robin+git+https://github.com/pwnpanda/xxh-plugin-zsh-robin`
+- `xxh [HOST] +if`
 
 # Original
 
