@@ -7,7 +7,8 @@ CURR_DIR="$(cd "$(dirname "$0")" && pwd)"
 source $CURR_DIR/.zshrc
 
 # Get the actual home directory (one level up from .xxh)
-ACTUAL_HOME=$(cd $HOME/.. && pwd)
+cd $HOME/..
+ACTUAL_HOME=$(pwd)
 
 # Change to the actual home directory
 cd $ACTUAL_HOME
