@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 CDIR="$(cd "$(dirname "$0")" && pwd)"
-OPT_DIR="/opt/"
-build_dir="$CDIR/build"
+build_dir=$CDIR/build
 
 while getopts A:K:q option
 do
@@ -36,8 +35,8 @@ for url in $urls; do
 	git clone $arg_q --depth=1 $url
 done
 curl -L git.io/antigen > $build_dir/antigen.zsh
-git clone git@github.com:pwnpanda/dotfiles.git
-mv dotfiles/.* .
+git clone git@github.com:pwnpanda/dotfiles.git $build_dir/dotfiles
+mv $build_dir/dotfiles/.* .
 rm -rf .git
 rm -rf dotfiles
 
