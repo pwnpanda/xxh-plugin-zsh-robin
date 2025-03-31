@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 CDIR="$(cd "$(dirname "$0")" && pwd)"
-build_dir=$CDIR/build
+OPT_DIR="/opt/"
+build_dir="$CDIR/build"
 
 while getopts A:K:q option
 do
