@@ -46,9 +46,7 @@ for file in "$XXH_PLUGIN_PATH"/.zshrc "$XXH_PLUGIN_PATH"/.p10k.zsh "$XXH_PLUGIN_
 done
 
 # Source zshrc from the opt directory
-if [[ -f "~/.zshrc" ]]; then
-  source "~/.zshrc"
-fi
+if [[ -f "$HOME/.zshrc" ]]; then source "$HOME/.zshrc"; fi
 
 # Change to the standard home directory
 cd "$HOME" 2>/dev/null || true
