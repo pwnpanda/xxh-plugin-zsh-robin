@@ -43,7 +43,7 @@ if [[ ! -d "$OPT_DIR/zsh-autosuggestions" ]]; then
   sudo ln -sf "$XXH_PLUGIN_PATH/antigen.zsh" "$ANTIGEN_PATH/antigen.zsh"
   
   # Link dotfiles to /opt
-  for file in "$XXH_PLUGIN_PATH"/.zshrc "$XXH_PLUGIN_PATH"/.p10k.zsh "$XXH_PLUGIN_PATH"/.aliases; do
+  for file in "$XXH_PLUGIN_PATH"/.zshrc "$XXH_PLUGIN_PATH"/.p10k.zsh "$XXH_PLUGIN_PATH"/.zsh_alias; do
     if [[ -f "$file" ]]; then
       sudo ln -sf "$file" "$HOME/$(basename "$file")"
     fi
