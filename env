@@ -1,2 +1,3 @@
-fpath=$fpath:$HOME/.xxh/plugins/xxh-plugin-zsh-robin/build/opt/crash/
+fpath=$fpath:/opt/crash/:$HOME/.xxh/plugins/xxh-plugin-zsh-robin/build/crash/
 build_dir=$HOME/.xxh/plugins/xxh-plugin-zsh-robin/build/
+OPT_DIR=/opt

@@ -34,10 +34,17 @@ urls='https://github.com/zsh-users/zsh-autosuggestions.git https://github.com/zs
 for url in $urls; do
 	git clone $arg_q --depth=1 $url
 done
+# Download antigen
 curl -L git.io/antigen > $build_dir/antigen.zsh
-git clone git@github.com:pwnpanda/dotfiles.git $build_dir/dotfiles
-mv $build_dir/dotfiles/.* .
-rm -rf .git
+# Clone your dotfiles
+git clone https://github.com/pwnpanda/dotfiles.git $build_dir/dotfiles
+# Move dotfiles to build directory
+for file in $build_dir/dotfiles/.*; do
+    # Ignore . and .. directories
+    if [[ "$(basename "$file")" != "." && "$(basename "$file")" != ".." && "$(basename "$file")" != ".git" ]]; then
+        cp -a "$file" "$build_dir/"
+    fi
+done
 rm -rf dotfiles
 
 
