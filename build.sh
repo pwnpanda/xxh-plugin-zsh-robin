@@ -36,16 +36,38 @@ for url in $urls; do
 done
 # Download antigen
 curl -L git.io/antigen > $build_dir/antigen.zsh
-# Clone your dotfiles
-git clone https://github.com/pwnpanda/dotfiles.git $build_dir/dotfiles
-# Move dotfiles to build directory
-for file in $build_dir/dotfiles/.*; do
-    # Ignore . and .. directories
-    if [[ "$(basename "$file")" != "." && "$(basename "$file")" != ".." && "$(basename "$file")" != ".git" ]]; then
-        cp -a "$file" "$build_dir/"
-    fi
+# Render canonical shell config from merge_envs via chezmoi.
+# Requires chezmoi and a local clone of merge_envs; both are present on every
+# merge_envs-bootstrapped machine. We use a temp config to satisfy
+# promptStringOnce (which --promptString does NOT feed) and to set modules=ZSH
+# (the xxh remote target only needs shell config, no AI/BugBounty/Desktop).
+MERGE_ENVS="${MERGE_ENVS_REPO:-${HOME}/git/priv/merge_envs}"
+if [[ ! -d "$MERGE_ENVS/home" ]]; then
+  echo "[ERR] merge_envs not found at $MERGE_ENVS — set MERGE_ENVS_REPO or clone it" >&2
+  exit 1
+fi
+if ! command -v chezmoi >/dev/null 2>&1 \
+   && [[ ! -x "${HOME}/bin/chezmoi" ]]; then
+  echo "[ERR] chezmoi not found on PATH or in ~/bin" >&2
+  exit 1
+fi
+chezmoi_bin="$(command -v chezmoi || echo "${HOME}/bin/chezmoi")"
+
+xxh_cm_cfg="$(mktemp -d)/chezmoi.toml"
+cat > "$xxh_cm_cfg" <<EOF
+[data]
+    modules = "ZSH"
+    keepassxcDb = ""
+    isWSL = false
+    isLinux = true
+EOF
+
+for f in .zshrc .zsh_alias .p10k.zsh; do
+  "$chezmoi_bin" --config "$xxh_cm_cfg" --source "$MERGE_ENVS/home" \
+    cat "${HOME}/${f}" > "${build_dir}/${f}" \
+    || { echo "[ERR] chezmoi cat failed for $f" >&2; exit 1; }
 done
-rm -rf dotfiles
+rm -f "$xxh_cm_cfg"
 
 
 #portable_url='https://,,,/.tar.gz'
